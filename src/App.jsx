@@ -1,8 +1,8 @@
-import "./App.css";
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import { useStore } from "./hooks/useStore";
-import Admin from "./components/Admin.jsx";
+import Users from "./components/Users";
+import Admin from "./components/Admin";
 
 function App() {
   const setAuthData = useStore((state) => state.setAuthData);
@@ -19,7 +19,7 @@ function App() {
               onSuccess={async (credentialResponse) => {
                 console.log(credentialResponse);
                 const { data } = await axios.post(
-                  import.meta.env.VITE_BACKEND_URL,
+                  import.meta.env.VITE_BACKEND_URL + "/login",
                   {
                     token: credentialResponse.credential,
                   }
@@ -36,6 +36,7 @@ function App() {
       ) : (
         <>
           <Admin />
+          <Users />
         </>
       )
       }

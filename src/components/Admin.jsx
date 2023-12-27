@@ -8,7 +8,7 @@ const Admin = () => {
     <nav className="bg-gray-800 p-4">
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center">
-          <h1 className="text-white text-lg font-bold">Your Logo</h1>
+          <h1 className="text-white text-lg font-bold">Weather-bot</h1>
         </div>
 
         {authData && (
